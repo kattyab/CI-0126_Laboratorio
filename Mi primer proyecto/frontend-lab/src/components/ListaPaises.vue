@@ -18,7 +18,7 @@ is-fullwidth">
                     <td>{{ pais.Idioma }}</td>
                     <td>
                         <button class="btn btn-secondary btn-sm">Editar</button>
-                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                        <button class="btn btn-danger btn-sm" v-on:click="eliminar(index)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -40,6 +40,11 @@ export default {
             ],
         };
     },
+    methods: {
+        eliminar(index) {
+            this.paises.splice(index, 1);
+        },
+    }
 }
 </script>
 
